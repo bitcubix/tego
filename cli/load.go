@@ -3,7 +3,7 @@ package cli
 
 import (
 	"errors"
-	"io/ioutil"
+	"os"
 
 	"github.com/bitcubix/tego/config"
 	"github.com/manifoldco/promptui"
@@ -20,7 +20,7 @@ func Load() (string, error) {
 	}
 
 	// search for template conig in dir
-	files, err := ioutil.ReadDir(folder_path)
+	files, err := os.ReadDir(folder_path)
 	if err != nil {
 		return "", err
 	}
